@@ -76,7 +76,9 @@ To retrieve the latest version of the AFC ESG Report, click on the release secti
     ![PBI Workspace Settings](images/PBI%20Dataset%20Settings.png)
 
 4. **Parameters**
-The empty ESG report will be configured to your organization by setting up the parameters `APIUsername`, `APIPassword`, and `APIBaseURL`. These are stored as configurable parameters within the system, allowing for seamless reuse across different API endpoints. By centralizing the configuration in this manner, any updates or changes to these parameters only need to be made in one place, ensuring consistency and reducing the risk of errors across the board.
+
+   The empty ESG report will be configured to your organization by setting up the parameters `APIUsername`, `APIPassword`, and `APIBaseURL`. These are stored as configurable parameters within the system, allowing for seamless reuse across different API endpoints. By centralizing the configuration in this manner, any updates or      changes to these parameters only need to be made in one place, ensuring consistency and reducing the risk of errors across the board.
+
 
    | Parameter                   | Description                                                                                    | Details / Example                                                                                                                |
    |-----------------------------|------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
