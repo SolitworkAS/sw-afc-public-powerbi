@@ -1,4 +1,4 @@
-# **Solitwork** AFC ESG Reporting - Deplyoment Guide
+# **Solitwork** AFC ESG Reporting - Deployment Guide
 Welcome to Solitwork's official ESG (Environmental, Social and Governance) reporting repository! This repository contains the most up-to-date versions of the ESG report, fully compatible with the most recent ESG and Carbon Accounting applications.
 
 This guide will outline how to:  
@@ -20,6 +20,8 @@ This guide will outline how to:
 
 
 ## 1. Download the latest .pbix report file
+To download the latest version of the AFC ESG Report, select on latest release on this page and download the attached `.pbix` file. 
+
 
 
 
