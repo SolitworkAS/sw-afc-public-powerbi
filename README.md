@@ -20,25 +20,72 @@ This guide will outline how to:
 
 
 ## 1. Download the latest .pbix report file
-To download the latest version of the AFC ESG Report, select on latest release on this page and download the attached `.pbix` file. 
+To retrieve the latest version of the AFC ESG Report, click on the release section on this page and download the attached `.pbix` file. 
+
+   ![Release](images/Navigate%20Release.png)
 
 
+## 2. Upload the .pbix report file to a Power BI Workspace
 
+### Option A: Publish from within Power BI Desktop
 
+1. Launch **Power BI Desktop**
+2. Open the downloaded `.pbix` file.
+3. If you're not already signed in, click on **Sign in** and enter your Power BI credentials.
 
-| URL                         | Description                                                                                               | Access                                                                                                   |
-|-----------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| `carbacc_frontend_url`      | The user interface for carbon accounting.                                                                 | Requires a user created through the ESG user interface with Carbon rights.                               |
-| `carbon_api_url`            | API interface for carbon accounting. Access documentation at `/swagger/index.html`.                       | Requires a user created through the ESG user interface. The user should have the Carbon role.                               |
-| `esg_frontend_url`          | The user interface for ESG.                                                                               | Requires a user with at least the Respondent role. For initial access, use the Admin User details from `terraform.tfvars`. |
-| `esg_organization_api`      | API interface for setting up organizations and departments in ESG. Access documentation at `/docs`.                                        | Requires a user created through the ESG user interface with Admin role.                                |
-| `esg_reporting_api`         | API interface for obtaining ESG data for reporting purposes. Access documentation at `/docs`.                                             | Requires a user created through the ESG user interface with the Admin role.                                |
-| `keycloak_url`              | The Keycloak server for setting up Single Sign-On (SSO) integration.                                      | Log in with the username `admin` and the admin password set in `terraform.tfvars`. Guide available in `sw-afc-public-infra/guides/sso-setup/README.md`.          |
-| `vat_api_url`               | API interface for VAT.                                                                                    |                                                                                                          |
-| `vat_frontend_url`          | The user interface for VAT.                                                                               |                                                                                                          |
+   ![PBI Desktop Sign In](images/PBI%20Desktop%20Signin.png)
 
+4. Go to the **Home** tab.
+5. Click on **Publish**.
 
+   ![PBI Desktop Publish](images/PBI%20Desktop%20Publish.png)
 
+6. You may be asked to save your report if you haven't saved it already. Do so if prompted.
+7. Choose the workspace in Power BI Service where you want to publish the report.
+8. Click **Select** or **OK**.
+9. Continue with **Step 3** of this guide. 
+
+### Option B: Publish from Power BI Service
+
+1. Log in to your **Power BI Account** (via https://app.powerbi.com)
+2. Navigate to the appropriate Power BI Workspace or create a new workspace
+
+   ![PBI Workspace](images/PBI%20Workspace.jpg)
+
+3. Click **Upload** and select `.pbix` file you have previously downloaded. 
+
+   ![PBI Workspace Upload](images/PBI%20Workspace%20Upload.png)
+
+4. Continue with **Step 3** of this guide.
+
+## 3. Edit Power BI Dataset Credentials 
+
+1.	**Open Power BI Service:**
+    - Open your web browser.
+    - Navigate to the Power BI Service at https://app.powerbi.com.
+    - Sign in with your credentials.
+
+2.	**Navigate to the Dataset:**
+    - Once logged in, go to the workspace which contains the published report.
+    - Find the dataset associated with your report (**Type**: `Semantic model`).
+
+3.	**Dataset Settings:**
+    - Hover over the dataset, and an ellipsis `...` / options icon will appear. **Click on it**.
+    - Choose **Settings** from the dropdown menu.
+
+    ![PBI Workspace Settings](images/PBI%20Dataset%20Settings.png)
+
+4. **Parameters**
+
+   | Parameter                   | Description                                                                                    | Details / Example                                                                                                                |
+   |-----------------------------|------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+   | `APIUsername`               | A dedicated Reporting User, not tied to an individual / person.                                | Requires a user created through the ESG user interface with the Admin role.                                                      |
+   | `APIPassword`               | The secure password required for authentication.                                               |                                                                                                                                  |
+   | `APIBaseURL`                | The base URL connects the report with your specific ESG and Carbon Accounting environment.     | see highlighted `APIBaseURL` part in **bold**:  esg-frontend-service.**yellowground-7d1c049j.northeurope.azurecontainerapps.io** |
+
+- In the **Parameters** section, replace the placeholder values with the following credentials and click **apply**:
+  
+   ![PBI Dataset Parameters](images/PBI%20Dataset%20Parameters.png)
 
 
 
@@ -67,7 +114,7 @@ By setting up these parameters, you will ensure that the report functions correc
 ![API Overview](images/API%20Overview.png)
 
 ## Parameters
-In the ESG reporting system, the foundational step involves setting up parameters such as `username`, `password`, and `base URL`. These are stored as configurable parameters within the system, allowing for seamless reuse across different API endpoints. By centralizing the configuration in this manner, any updates or changes to these parameters only need to be made in one place, ensuring consistency and reducing the risk of errors across the board.
+In the ESG reporting system, the foundational step involves setting up parameters such as `APIUsername`, `APIPassword`, and `APIBaseURL`. These are stored as configurable parameters within the system, allowing for seamless reuse across different API endpoints. By centralizing the configuration in this manner, any updates or changes to these parameters only need to be made in one place, ensuring consistency and reducing the risk of errors across the board.
 
 ## Token Retrieval Function
 To ensure secure and authorized access to the APIs, our system automates the token retrieval process through a dedicated function `fnGetToken`. This function is crucial for maintaining secure communication with the API by fetching an authentication token using your credentials.
