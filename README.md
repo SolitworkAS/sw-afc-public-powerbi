@@ -17,7 +17,7 @@ By setting up these parameters, you will ensure that the report functions correc
 
 ## ESG Report Implementation Overview
 
-## System Architecture
+![API Overview](images/API%20Overview.png)
 
 ### Parameters
 In the ESG reporting system, the foundational step involves setting up parameters such as `username`, `password`, and `base URL`. These are stored as configurable parameters within the system, allowing for seamless reuse across different API endpoints. By centralizing the configuration in this manner, any updates or changes to these parameters only need to be made in one place, ensuring consistency and reducing the risk of errors across the board.
