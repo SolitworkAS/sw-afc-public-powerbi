@@ -88,9 +88,9 @@ The following step will outline how to upload the `.pbix` file to a Power BI Wor
 
     ![PBI Workspace Settings](images/PBI%20Dataset%20Settings.png)
 
-4. **Parameters**
+## 4. Parameters
 
-   The empty ESG report will be configured to your organization by setting up the parameters `APIUsername`, `APIPassword`, and `APIBaseURL`. These are stored as configurable parameters within the system, allowing for seamless reuse across different API endpoints. By centralizing the configuration in this manner, any updates or      changes to these parameters only need to be made in one place, ensuring consistency and reducing the risk of errors across the board.
+   The empty ESG report will be configured to your organization by setting up the parameters `APIUsername`, `APIPassword`, and `APIBaseURL`. These are stored as configurable parameters within the system, allowing for seamless reuse across different API endpoints. By centralizing the configuration in this manner, any updates or      changes to these    parameters only need to be made in one place, ensuring consistency and reducing the risk of errors across the board.
 
 
    | Parameter                   | Description                                                                                    | Details / Example                                                                                                                |
@@ -99,17 +99,60 @@ The following step will outline how to upload the `.pbix` file to a Power BI Wor
    | `APIPassword`               | The secure password required for authentication.                                               |                                                                                                                                  |
    | `APIBaseURL`                | The base URL connects the report with your specific ESG and Carbon Accounting environment.     | see highlighted `APIBaseURL` part in **bold**:  esg-frontend-service.**yellowground-7d1c049j.northeurope.azurecontainerapps.io** |
 
-- In the **Parameters** section, replace the placeholder values with the following credentials:
+   - In the **Parameters** section, replace the placeholder values with the following credentials:
   
    ![PBI Dataset Parameters](images/PBI%20Dataset%20Parameters.png)
 
 
-- select **apply**.
+   - select **apply**.
+
+
+## 5. Skip Connection Test
+
+   By default, Microsoft Power BI tests connections first. As a token needs to be generated first before the API can be accessed, these test would fail, resulting in an error message. To prevent this from happening, the dataset has to be instructed to skip these connection tests.
+
+   - In the dataset settings, navigate to the **Data Source Credentials** section.
+   - For each of the Web URLs listed, click on **Edit Credentials**
+  
+   ![PBI Skip Test Connection](images/PBI%20Skip%20Test%20Connection.png)
+
+   - ensure that the settings are as follows:
+  
+      | Setting Name                               | Set to:             |
+      |--------------------------------------------|---------------------|
+      | Authentication method                      | `Anonymous`         |
+      | Privacy level setting for this data source | `public`            |
+      | Skip Test Connection                       | :white_check_mark:  |
+
+   - click on **Sign in**.
+
+   > [!CAUTION]
+   > Make sure to repeat this step **for each** of the listed web sources.
+
+## 6. Dataset Refresh Schedule
+
+   In this step, you will set a refresh schedule to determine how often the data in your ESG Report shall be updated. Please note that the maximum number of daily refreshes is determined by the Power BI licence and capacity of the PBI Workspace. 
+
+   - In the dataset settings, navigate to the **Refresh** section.
+   - configure a refresh schedule and select the time(s) the semantic model shall update each day.
+
+   ![PBI Refresh](images/PBI%20Refresh%20Schedule.png)
+
+   - click **apply** once done. 
+
+   > [!NOTE]
+   > Regardless of your refresh schedule, you can always **manually trigger** a refresh of the dataset/semantic model.
+   > To do so, return to the dataset in your workspace, hover over it and click on the refresh now :arrows_counterclockwise: button. 
+
+**Done!** :white_check_mark: You have now made all necessary adjustments to the dataset and the connected ESG Report. 
+Remember that your colleagues need access to that Power BI Workspace to open and access the ESG Report. 
 
 
 
+# Technical Information: ESG Report Implementation Overview
 
-
+<details>
+<summary>click to see further technical information</summary>
 
 ## Using the Report
 To utilize this report effectively, please follow these steps:
@@ -124,8 +167,6 @@ To utilize this report effectively, please follow these steps:
     - **Base URL**: The base URL connects the report with your specific ESG and Carbon Accounting environment.
 
 By setting up these parameters, you will ensure that the report functions correctly within your operational context, allowing you to leverage the latest insights and analyses provided.
-
-# Technical Information: ESG Report Implementation Overview
 
 ![API Overview](images/API%20Overview.png)
 
@@ -149,3 +190,6 @@ let
     Surveys = fnGenerateByPage(fnGetNextPageSurveys)
 in
     Surveys
+```
+</details>
+
