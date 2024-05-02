@@ -26,8 +26,17 @@ To retrieve the latest version of the AFC ESG Report, click on the release secti
 
 
 ## 2. Upload the .pbix report file to a Power BI Workspace
+The following step will outline how to upload the `.pbix` file to a Power BI Workspace, so that it can be shared and viewd within your organization. 
+
+> [!NOTE]
+> You can upload file after having it opened it in Power BI Desktop (**Option A**).
+> Alternatively, you can also directly log in to Power BI Service, and upload it from there (**Option B**).
+> 
+> Choose the method you prefer, but be aware that **Option A** requires to have **Microsoft Power BI Desktop** installed on your computer. 
 
 ### Option A: Publish from within Power BI Desktop
+<details>
+<summary> Option A: click to expand</summary>
 
 1. Launch **Power BI Desktop**
 2. Open the downloaded `.pbix` file.
@@ -44,8 +53,11 @@ To retrieve the latest version of the AFC ESG Report, click on the release secti
 7. Choose the workspace in Power BI Service where you want to publish the report.
 8. Click **Select** or **OK**.
 9. Continue with **Step 3** of this guide. 
+</details>
 
 ### Option B: Publish from Power BI Service
+<details>
+<summary> Option B: click to expand</summary>
 
 1. Log in to your **Power BI Account** (via https://app.powerbi.com)
 2. Navigate to the appropriate Power BI Workspace or create a new workspace
@@ -57,6 +69,7 @@ To retrieve the latest version of the AFC ESG Report, click on the release secti
    ![PBI Workspace Upload](images/PBI%20Workspace%20Upload.png)
 
 4. Continue with **Step 3** of this guide.
+</details>
 
 ## 3. Edit Power BI Dataset Credentials 
 
@@ -86,12 +99,12 @@ To retrieve the latest version of the AFC ESG Report, click on the release secti
    | `APIPassword`               | The secure password required for authentication.                                               |                                                                                                                                  |
    | `APIBaseURL`                | The base URL connects the report with your specific ESG and Carbon Accounting environment.     | see highlighted `APIBaseURL` part in **bold**:  esg-frontend-service.**yellowground-7d1c049j.northeurope.azurecontainerapps.io** |
 
-- In the **Parameters** section, replace the placeholder values with the following credentials and click **apply**:
+- In the **Parameters** section, replace the placeholder values with the following credentials:
   
    ![PBI Dataset Parameters](images/PBI%20Dataset%20Parameters.png)
 
 
-
+- select **apply**.
 
 
 
