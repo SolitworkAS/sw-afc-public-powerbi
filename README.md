@@ -33,7 +33,6 @@ The following step will outline how to upload the `.pbix` file to a Power BI Wor
 
 ### Publish from Power BI Service
 <details>
-<summary> Click to expand</summary>
 
 1. Log in to your **Power BI Account** (via https://app.powerbi.com)
 2. Navigate to the appropriate Power BI Workspace or create a new workspace.
