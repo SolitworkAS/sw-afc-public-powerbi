@@ -29,47 +29,24 @@ To retrieve the latest version of the AFC ESG Report, click on the release secti
 The following step will outline how to upload the `.pbix` file to a Power BI Workspace, so that it can be shared and viewd within your organization. 
 
 > [!NOTE]
-> You can upload file after having it opened it in Power BI Desktop (**Option A**).
-> Alternatively, you can also directly log in to Power BI Service, and upload it from there (**Option B**).
-> 
-> Choose the method you prefer, but be aware that **Option A** requires to have **Microsoft Power BI Desktop** installed on your computer. 
+> You can directly log in to Power BI Service and upload the file from there.
 
-### Option A: Publish from within Power BI Desktop
+### Publish from Power BI Service
 <details>
-<summary> Option A: click to expand</summary>
-
-1. Launch **Power BI Desktop**
-2. Open the downloaded `.pbix` file.
-3. If you're not already signed in, click on **Sign in** and enter your Power BI credentials.
-
-   ![PBI Desktop Sign In](images/PBI%20Desktop%20Signin.png)
-
-4. Go to the **Home** tab.
-5. Click on **Publish**.
-
-   ![PBI Desktop Publish](images/PBI%20Desktop%20Publish.png)
-
-6. You may be asked to save your report if you haven't saved it already. Do so if prompted.
-7. Choose the workspace in Power BI Service where you want to publish the report.
-8. Click **Select** or **OK**.
-9. Continue with **Step 3** of this guide. 
-</details>
-
-### Option B: Publish from Power BI Service
-<details>
-<summary> Option B: click to expand</summary>
+<summary> Click to expand</summary>
 
 1. Log in to your **Power BI Account** (via https://app.powerbi.com)
-2. Navigate to the appropriate Power BI Workspace or create a new workspace
+2. Navigate to the appropriate Power BI Workspace or create a new workspace.
 
    ![PBI Workspace](images/PBI%20Workspace.jpg)
 
-3. Click **Upload** and select `.pbix` file you have previously downloaded. 
+3. Click **Upload** and select the `.pbix` file you have previously downloaded.
 
    ![PBI Workspace Upload](images/PBI%20Workspace%20Upload.png)
 
 4. Continue with **Step 3** of this guide.
 </details>
+
 
 ## 3. Edit Power BI Dataset Credentials 
 
