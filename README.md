@@ -76,9 +76,8 @@ The following step will outline how to upload the `.pbix` file to a Power BI Wor
    | `sas_token`               | The secure credentials required for authentication.                                               |                                                                                                                                  |
 
    - In the **Parameters** section, replace the placeholder values with the before mentioned credentials:
-  
-   <img width="884" alt="Skærmbillede 2025-02-26 kl  13 31 51" src="https://github.com/user-attachments/assets/4a64e297-b3b0-4e69-a829-b9bbc7ff80f2" />
 
+   ![PBI Parameters](images/PBI%20Parameters.png)
 
 select **apply**.
    
@@ -86,8 +85,8 @@ select **apply**.
    - Choose **Shared Access Signature (SAS)** as authentication method
    - Enter your `SAS_token` in **account key** section
    - Make sure **privacy level setting for this data source** is set to **private**
-  
-   ![PBI Dataset Parameters]<img width="925" alt="Skærmbillede 2025-02-26 kl  14 34 00" src="https://github.com/user-attachments/assets/71e52a4f-601b-4aab-a2f1-a7f6f9a1d500" />
+
+   ![PBI Dataset Parameters](images/PBI%20Dataset%20Parameters.png)
 
 
 select **sign in**.
